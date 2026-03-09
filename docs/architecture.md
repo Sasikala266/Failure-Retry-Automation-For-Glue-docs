@@ -41,7 +41,7 @@ graph TB
 
 The following sequence diagram illustrates the complete interaction flow when a Glue job fails:
 
-```mermaid
+<div class="mermaid">
 sequenceDiagram
     participant Glue as AWS Glue Job
     participant EB as EventBridge
@@ -81,7 +81,7 @@ sequenceDiagram
         Lambda->>Webex: Send notification
         Webex-->>Lambda: Notification delivered
     end
-
+</div>
 ---
 
 ## 📦 Infrastructure Components
