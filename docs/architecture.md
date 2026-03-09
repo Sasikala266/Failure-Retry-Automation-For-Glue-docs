@@ -40,7 +40,7 @@ graph TB
 ## 🔄 Component Interaction Flow
 
 The following sequence diagram illustrates the complete interaction flow when a Glue job fails:
-<div class="mermaid">
+
 ```mermaid
 sequenceDiagram
     participant Glue as AWS Glue Job
@@ -51,28 +51,28 @@ sequenceDiagram
     participant Bedrock as Amazon Bedrock
     participant GlueAPI as Glue API
     participant Webex as Webex Teams
-    
+
     Glue->>EB: Job Failed Event
     EB->>Lambda: Invoke with event payload
-    
+
     Lambda->>CW: Fetch error logs
     CW-->>Lambda: Error logs
-    
+
     Lambda->>GlueAPI: Get job run details
     GlueAPI-->>Lambda: Job parameters
-    
+
     Lambda->>DDB: Get retry count
     DDB-->>Lambda: Current retry count
-    
+
     Lambda->>Lambda: Check predefined patterns
-    
+
     alt Pattern matched
         Lambda->>Lambda: Use pattern decision
     else No pattern match
         Lambda->>Bedrock: Analyze error with LLM
-        Bedrock->>Lambda: Classification result
+        Bedrock-->>Lambda: Classification result
     end
-    
+
     alt Retriable & within limit
         Lambda->>DDB: Increment retry count
         Lambda->>GlueAPI: StartJobRun (retry)
@@ -81,9 +81,6 @@ sequenceDiagram
         Lambda->>Webex: Send notification
         Webex-->>Lambda: Notification delivered
     end
-    
-</div>
-```
 
 ---
 
