@@ -6,7 +6,10 @@ This page provides a comprehensive overview of the Glue Job Retry Automation sys
 
 ## 🏗️ High-Level Architecture
 
-```mermaid
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+<div class="mermaid">
 graph TB
     GlueJob[AWS Glue Job] -->|Fails| EventBridge[Amazon EventBridge]
     EventBridge -->|Triggers| Lambda[Analysis Agent Lambda]
@@ -20,7 +23,7 @@ graph TB
     style Lambda fill:#f9f,stroke:#333,stroke-width:4px
     style EventBridge fill:#bbf,stroke:#333,stroke-width:2px
     style Bedrock fill:#bfb,stroke:#333,stroke-width:2px
-```
+</div>
 
 ### Core Components
 
@@ -37,7 +40,7 @@ graph TB
 ## 🔄 Component Interaction Flow
 
 The following sequence diagram illustrates the complete interaction flow when a Glue job fails:
-
+<div class="mermaid">
 ```mermaid
 sequenceDiagram
     participant Glue as AWS Glue Job
@@ -79,7 +82,7 @@ sequenceDiagram
         Webex-->>Lambda: Notification delivered
     end
     
-    Lambda-->>EB: Processing complete
+</div>
 ```
 
 ---

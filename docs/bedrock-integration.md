@@ -22,7 +22,10 @@ Amazon Bedrock provides the AI capabilities that enable the system to intelligen
 
 The system uses a hierarchical approach to balance speed and intelligence:
 
-```mermaid
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+<div class="mermaid">
 graph TD
     A[Error Occurs] --> B[Check Predefined Patterns]
     B --> C{Pattern Match?}
@@ -33,7 +36,7 @@ graph TD
     
     style D fill:#90EE90
     style E fill:#87CEEB
-```
+</div>
 
 ### Tier 1: Pattern Matching (Fast Path)
 
