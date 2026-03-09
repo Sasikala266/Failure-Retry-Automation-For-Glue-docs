@@ -1,6 +1,15 @@
 title: Glue Job Retry Automation
 description: Automated failure detection, analysis, and retry system for AWS Glue jobs
 theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: html
+  parse_block_html: true
+  hard_wrap: false
+  auto_ids: true
 
 # GitHub repository information
 github:
