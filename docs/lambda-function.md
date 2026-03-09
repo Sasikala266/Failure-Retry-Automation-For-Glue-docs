@@ -21,7 +21,10 @@ The Lambda function (`glue-failure-analysis-agent`) is the brain of the automati
 
 ## 🔄 Processing Workflow
 
-```mermaid
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+<div class="mermaid">
 graph TD
     A[EventBridge Invokes Lambda] --> B[Parse Event]
     B --> C[Validate Event Structure]
@@ -41,7 +44,7 @@ graph TD
     O --> P[Start New Job Run]
     P --> Q[Return Success Response]
     N -->|No| R[Send Webex Notification]
-    R --> Q
+</div>
 ```
 
 ---
