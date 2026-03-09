@@ -1,0 +1,11 @@
+title: Glue Job Retry Automation
+description: Automated failure detection, analysis, and retry system for AWS Glue jobs
+theme: jekyll-theme-cayman
+
+# GitHub repository information
+github:
+  repository_url: https://github.com/Sasikala266/Failure-Retry-Automation-For-Glue
+
+# Navigation
+navigation:
+  - index.md
